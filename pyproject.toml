@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "movie-app"
+version = "0.1.0"
+description = ""
+authors = ["BrankoGeorgiev <branko.georgiev@students.finki.ukim.mk>"]
+#package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.95.2"
+sqlalchemy = "^2.0"
+#psycopg2-binary = "^2.9.9"
+asyncpg = "^0.29.0"
+uvicorn = "^0.34.0"
+python-dotenv = "^0.21.1"
+
+[tool.poetry.dev-dependencies]
+gunicorn = "^20.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
