@@ -1,0 +1,27 @@
+minikube start
+minikube addons enable ingress
+minikube addons enable ingress-dns
+
+kubectl config set-context --current --namespace=movieapp
+
+kubectl apply -f namespace.yaml
+kubectl apply -f secret.yaml
+kubectl apply -f configmap.yaml
+kubectl apply -f statefulset.yaml
+kubectl apply -f db-service.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+
+kubectl get pods -n movieapp --watch
+
+kubectl port-forward svc/movieapp-service 8080:80 -n movieapp
+
+kubectl delete -f namespace.yaml
+kubectl delete -f secret.yaml
+kubectl delete -f configmap.yaml
+kubectl delete -f statefulset.yaml
+kubectl delete -f db-service.yaml
+kubectl delete -f deployment.yaml
+kubectl delete -f service.yaml
+kubectl delete -f ingress.yaml
