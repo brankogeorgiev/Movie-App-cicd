@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: movieapp
+data:
+    SQLALCHEMY_DATABASE_URL: "postgresql://postgres:postgresql@db-service:5432/fastapi_db"
